@@ -14,8 +14,11 @@ module Utils =
             | [] -> raise <| InvalidOperationException()
             | x::xs -> (x, xs)
 
-        let rec intersperse (a: 'a) (xs: 'a list) : 'a list =
-            List.foldBack (fun x xs' -> x::a::xs') xs []
+        let intersperse (a: 'a) (xs: 'a list) : 'a list =
+            match xs with
+            | first::second::rest -> first::(List.foldBack (fun x xs' -> a::x::xs') (second::rest) [])
+            // TODO: Should this be an error condition?
+            | _ -> xs
 
     module Seq =
         let uncons xs =
@@ -34,3 +37,4 @@ module Utils =
 
     let inline maybe (def: 'b) (f: 'a -> 'b) (a: 'a option) : 'b =
         Option.fold (fun _ -> f) def a
+

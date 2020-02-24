@@ -12,6 +12,8 @@
     <Authors>Nickolas Lloyd</Authors>
     <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
     <PackageId>smindinvern.Utils</PackageId>
+    <RepositoryUrl>https://github.com/smindinvern/Utils</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/smindinvern/Utils</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
